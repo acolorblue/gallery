@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOW PLAYING</title>
+
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Warnes' type='text/css'>
+
+<link rel="stylesheet" href="http://cbwconline.com/Fonts/Hello Denver/stylesheet.css" type="text/css" />
+
+<link rel="stylesheet" href="http://cbwconline.com/Fonts/Neon Lights/stylesheet.css" type="text/css" />
+
+
+	<style type="text/css">
+		html {
+    /*WAS #003645*/
+  background: #FFFFFF;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  /*WAS background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.7) 100%);*/
+  /*background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.7) 100%);*/
+  /*height: 100vh;*/
+  margin: 0;
+  overflow: hidden;
+}
+
+.neon {
+  /*position: absolute;*/
+  flex: 0 0 100%;
+  padding: 1.5vw 0;
+  margin: auto;
+  color: transparent;
+  text-align: center;
+  z-index: 5;
+  -webkit-user-select: none;
+}
+.neon:nth-of-type(1) {
+	/*WAS 9VW*/
+  font: 0vw Warnes;
+  text-shadow: 0 0 .1vw #F3BCBC, 0 0 .5vw #F12F21, 0 0 1.5vw #f00;
+}
+.neon:nth-of-type(2) {
+	/*WAS 22VW 11VW*/
+  font: 5vw 'Hello Denver';
+  text-transform: uppercase;
+  text-shadow: 0 0 .1vw #F7CEEA, .5vw .5vw .5vw #E0018D, -.5vw -.5vw .5vw #E0018D, .5vw -.5vw .5vw #E0018D, -.5vw .5vw .5vw #E0018D, 0 -.5vw .5vw #E0018D, 0 .5vw .5vw #E0018D, .5vw .5vw .5vw #E0018D, 0 0 5vw #000;
+  letter-spacing: 2vw;
+}
+.neon:nth-of-type(2) span {
+	/*WAS .23s*/
+  animation: Flicker 3.23s infinite;
+}
+.neon:nth-of-type(3) {
+	/*WAS 13VW*/
+  font: 0vw 'Neon Lights', 'Hello Denver';
+  text-transform: uppercase;
+  text-shadow: 0 0 .1vw #95B4DA, 0 0 1vw #008EFF;
+}
+
+
+/*4 LINES*/
+.deco {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  /*WAS 27.5PX*/
+  /*height: 27.5vw;*/
+  z-index: 0;
+}
+.deco .line {
+  box-sizing: border-box;
+  border-radius: 1.5vw;
+  box-shadow: 0 0 1vw 1.2vw #024B5D;
+  height: 3vw;
+  /*WAS 90%*/
+  width: 60%;
+  margin: 3vw auto;
+  background: #ACDAB8;
+  border: 1.3vw solid #FEFAC8;
+  position: relative;
+}
+.deco .line:after {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  height: .5vw;
+  width: 100%;
+  background: #ACDAB8;
+  box-shadow: 0 0 .2vw .2vw #ACDAB8;
+  border-radius: .3vw;
+}
+
+@keyframes Flicker {
+  60%, 80% {
+    text-shadow: 0 0 0.1vw #DCD5DA, 0.5vw 0.5vw 0.5vw rgba(224, 1, 141, 0.2), -0.5vw -0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0.5vw -0.5vw 0.5vw rgba(224, 1, 141, 0.2), -0.5vw 0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0 -0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0 0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0.5vw 0 0.5vw rgba(224, 1, 141, 0.2), 0 0 #FFF;
+  }
+  70%, 100% {
+    text-shadow: 0 0 0.1vw #FFEFFA, 0.8vw 0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), 0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw 0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 -0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 0.8vw 0.8vw rgba(224, 1, 141, 0.4);
+  }
+}
+
+	</style>
+</head>
+<body>
+
+
+<h2 class="neon">A</h2>
+<h2 class="neon">
+   
+  <!-- col<span>o</span>r   -->
+   NOW PLAY<span>I</span>NG:
+</h2>
+<h2 class="neon">Blue</h2>
+<div class="deco">
+  <!-- <div class="line"></div> -->
+  <div class="line"></div>
+  <div class="line"></div>
+  <!-- <div class="line"></div> -->
+</div>
+
+</body>
+</html>
