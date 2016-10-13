@@ -18,13 +18,16 @@
 }
 
 body {
+  /*BRINGS TEXT INFRONT OF TWO LINES*/
   display: flex;
   justify-content: center;
   align-content: center;
+  /*MOVES TEXT UP*/
   flex-wrap: wrap;
   /*WAS background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.7) 100%);*/
   /*background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.03) 50%, rgba(0, 0, 0, 0.7) 100%);*/
   /*height: 100vh;*/
+  /*MOVES TEXT LOWER */
   margin: 0;
   overflow: hidden;
 }
@@ -32,50 +35,64 @@ body {
 .neon {
   /*position: absolute;*/
   flex: 0 0 100%;
-  /*HOW HIGHWAS 1.5 */
+  /*SPACE BETWEEN TEXT & TOP, WAS 1.5 */
   padding: .5vw 0;
+  /*MOVES TEXT LOWER*/
   margin: auto;
+/*COLOR OF ACTUAL NEON TEXT NOT SHADOW, WAS TRANSparent*/
   color: transparent;
   text-align: center;
+  /*MOVES TEXT BEHIND TWO LINES*/
   z-index: 5;
   -webkit-user-select: none;
 }
 .neon:nth-of-type(1) {
-  /*WAS 9VW*/
+  /*FONT OF LETTER A, WAS 9VW*/
   font: 0vw Warnes;
-  text-shadow: 0 0 .1vw #F3BCBC, 0 0 .5vw #F12F21, 0 0 1.5vw #f00;}
-
+  /*SHADOW SURROUNDING LETTER A TEXT */
+  text-shadow: 0 0 .1vw #F3BCBC, 0 0 .5vw #F12F21, 0 0 1.5vw #f00;
+}
 .neon:nth-of-type(2) {
-  /*WAS 22VW, 11VW, 5VW, NOW PLAYING*/
-  font: 3.5vw 'Hello Denver';
+  /*THE NOW PLAYING CODE*/
+  /*WAS 22VW, 11VW, 5VW, 4.5VW, 3.5VW NOW PLAYING*/
+  font: 3.4vw 'Hello Denver';
   text-transform: uppercase;
   text-shadow: 0 0 .1vw #F7CEEA, .5vw .5vw .5vw #E0018D, -.5vw -.5vw .5vw #E0018D, .5vw -.5vw .5vw #E0018D, -.5vw .5vw .5vw #E0018D, 0 -.5vw .5vw #E0018D, 0 .5vw .5vw #E0018D, .5vw .5vw .5vw #E0018D, 0 0 5vw #000;
-  letter-spacing: 2vw;}
-
+  letter-spacing: 2vw;
+}
 .neon:nth-of-type(2) span {
+  /*HOW LONG IT TAKES FOR THE LIGHT TO FLICKER*/
   /*WAS .23s*/
-  animation: Flicker 3.23s infinite;}
-
+  animation: Flicker 3.23s infinite;
+}
 .neon:nth-of-type(3) {
+  /*CODE FOR 3RD TEXT 'BLUE*/
   /*WAS 13VW*/
   font: 0vw 'Neon Lights', 'Hello Denver';
   text-transform: uppercase;
-  text-shadow: 0 0 .1vw #95B4DA, 0 0 1vw #008EFF;}
+  text-shadow: 0 0 .1vw #95B4DA, 0 0 1vw #008EFF;
+}
+
 
 /*4 LINES*/
 .deco {
+  /*TWO NEON BARS CODE*/
   position: absolute;
+  /*MOVE TWO NEON BARS DOWN WHEN +1*/
   top: 0;
   bottom: 0;
-  right: 0;
+  /*MOVES TWO NEON BARS LEFT WHEN +1*/
+  right: 1.8vw;
+  /*MOVES TWO NEON BARS RIGHT WHEN +1*/
   left: 0;
   margin: auto;
   /*WAS 27.5PX*/
   /*height: 27.5vw;*/
-  z-index: 0;}
-
+  z-index: 0;
+}
 .deco .line {
   box-sizing: border-box;
+  /*THE ROUNDING EDGE OF TWO NEON BARS*/
   border-radius: 1.5vw;
   /*WAS 1.2VW, TEAL SHADOW AROUND DECO*/
   box-shadow: 0 0 1vw .7vw #024B5D;
@@ -83,17 +100,17 @@ body {
   /*WAS 3VW, 2VW*/
   height: 1.2vw;
   /*WIDTH OF 2 LINES*/
-  /*WAS 90% 60%*/
-  width: 57%;
+  /*WAS 90% 60% 50%*/
+  width: 50%;
   /*HOW CLOSE 2 LINES TOUCH THE TOP   */
   /*WAS 3VW, 1.5VW */
   margin: 1.3vw auto;
   background: #ACDAB8;
   /*THE GREEN LINE IN BETWEEN YELLOW*/
-  /*WAS 1.3VW, 1.1VW, 1VW, .9VW HIGHER NUM IS SMALLER*/
-  border: .5vw solid #FEFAC8;
-  position: relative;}
-
+  /*WAS 1.3VW, 1.1VW, 1VW, .9VW, .5vw, +1 IS SMALLER*/
+  border: .4vw solid #FEFAC8;
+  position: relative;
+}
 .deco .line:after {
   content: '';
   position: relative;
@@ -113,6 +130,7 @@ body {
     text-shadow: 0 0 0.1vw #FFEFFA, 0.8vw 0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), 0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw 0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 -0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 0.8vw 0.8vw rgba(224, 1, 141, 0.4);
   }
 }
+
 
 	</style>
 </head>
