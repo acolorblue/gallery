@@ -4,15 +4,11 @@
 <head>
 	<title>NOW PLAYING</title>
 
-<!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Warnes' type='text/css'> -->
-
 <link rel="stylesheet" href="http://cbwconline.com/Fonts/Hello Denver/stylesheet.css" type="text/css" />
-
-<link rel="stylesheet" href="http://cbwconline.com/Fonts/Neon Lights/stylesheet.css" type="text/css" />
 
 
 	<style type="text/css">
-    html {
+		html {
     /*WAS #003645*/
   background: #FFFFFF;
 }
@@ -36,7 +32,7 @@ body {
   /*position: absolute;*/
   flex: 0 0 100%;
   /*SPACE BETWEEN TEXT & TOP, WAS 1.5 */
-  padding: .4vw 0;
+  padding: 1.4vw 0;
   /*MOVES TEXT LOWER*/
   margin: auto;
 /*COLOR OF ACTUAL NEON TEXT NOT SHADOW, WAS TRANSparent*/
@@ -46,32 +42,21 @@ body {
   z-index: 5;
   -webkit-user-select: none;
 }
+
 .neon:nth-of-type(1) {
-  /*FONT OF LETTER A, WAS 9VW*/
-  font: 0vw Warnes;
-  /*SHADOW SURROUNDING LETTER A TEXT */
-  text-shadow: 0 0 .1vw #F3BCBC, 0 0 .5vw #F12F21, 0 0 1.5vw #f00;
-}
-.neon:nth-of-type(2) {
   /*THE NOW PLAYING CODE*/
-  /*WAS 22VW, 11VW, 5VW, 4.5VW, 3.5VW NOW PLAYING*/
+	/*WAS 22VW, 11VW, 5VW, 4.5VW, 3.5VW NOW PLAYING*/
   font: 3.4vw 'Hello Denver';
   text-transform: uppercase;
   text-shadow: 0 0 .1vw #F7CEEA, .5vw .5vw .5vw #E0018D, -.5vw -.5vw .5vw #E0018D, .5vw -.5vw .5vw #E0018D, -.5vw .5vw .5vw #E0018D, 0 -.5vw .5vw #E0018D, 0 .5vw .5vw #E0018D, .5vw .5vw .5vw #E0018D, 0 0 5vw #000;
   letter-spacing: 2vw;
 }
-.neon:nth-of-type(2) span {
+.neon:nth-of-type(1) span {
   /*HOW LONG IT TAKES FOR THE LIGHT TO FLICKER*/
-  /*WAS .23s*/
+	/*WAS .23s*/
   animation: Flicker 3.23s infinite;
 }
-.neon:nth-of-type(3) {
-  /*CODE FOR 3RD TEXT 'BLUE*/
-  /*WAS 13VW*/
-  font: 0vw 'Neon Lights', 'Hello Denver';
-  text-transform: uppercase;
-  text-shadow: 0 0 .1vw #95B4DA, 0 0 1vw #008EFF;
-}
+
 
 
 /*4 LINES*/
@@ -132,18 +117,16 @@ body {
 }
 
 
+
 	</style>
 </head>
 <body>
 
-
-<h2 class="neon">A</h2>
 <h2 class="neon">
    
-  <!-- col<span>o</span>r   -->
-   NOW PLAY<span>I</span>NG:
+   NOW PLAY<span>I</span>NG
+  
 </h2>
-<h2 class="neon">Blue</h2>
 <div class="deco">
   <!-- <div class="line"></div> -->
   <div class="line"></div>
