@@ -2,130 +2,245 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NOW PLAYING</title>
+	<title>Exhibition</title>
 
-<link rel="stylesheet" href="http://cbwconline.com/Fonts/Hello Denver/stylesheet.css" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 
 
 	<style type="text/css">
-				body {
-				  /*BRINGS TEXT INFRONT OF TWO LINES*/
-				  display: flex;
-				  justify-content: center;
-				  align-content: center;
-				  /*MOVES TEXT UP*/
-				  flex-wrap: wrap;
-				  /*MOVES TEXT LOWER */
-				  margin: 0;
-				  overflow: hidden;
-				}
-				
-				.neon {
-				  /*position: absolute;*/
-				  flex: 0 0 100%;
-				  /*SPACE BETWEEN TEXT & TOP, WAS 1.5, 1.4VW*/
-				  padding: 1.1vw 0;
-				  /*MOVES TEXT LOWER*/
-				  margin: auto;
-				  /*COLOR OF ACTUAL NEON TEXT NOT SHADOW, WAS TRANSparent*/
-				  color: transparent;
-				  text-align: center;
-				  /*MOVES TEXT BEHIND TWO LINES*/
-				  z-index: 5;
-				  -webkit-user-select: none;
-				}
-				
-				.neon:nth-of-type(1) {
-				  /*THE NOW PLAYING CODE*/
-				  /*WAS 22VW, 11VW, 5VW, 4.5VW, 3.5VW, 3.1VW, 3VW, 2.9vw NOW PLAYING*/
-				  font: 2.9vw 'Hello Denver';
-				  text-transform: uppercase;
-				  text-shadow: 0 0 .1vw #F7CEEA, .5vw .5vw .5vw #E0018D, -.5vw -.5vw .5vw #E0018D, .5vw -.5vw .5vw #E0018D, -.5vw .5vw .5vw #E0018D, 0 -.5vw .5vw #E0018D, 0 .5vw .5vw #E0018D, .5vw .5vw .5vw #E0018D, 0 0 5vw #000;
-				  letter-spacing: 2vw;
-				}
-				
-				.neon:nth-of-type(1) span {
-				  /*HOW LONG IT TAKES FOR THE LIGHT TO FLICKER*/
-				  /*WAS .23s*/
-				  animation: Flicker 3.23s infinite;
-				}
-				/*4 LINES*/
-				
-				.deco {
-				  /*TWO NEON BARS CODE*/
-				  position: absolute;
-				  /*MOVE TWO NEON BARS DOWN WHEN +1*/
-				  top: 0;
-				  bottom: 0;
-				  /*MOVES TWO NEON BARS LEFT WHEN +1*/
-				  right: 1.8vw;
-				  /*MOVES TWO NEON BARS RIGHT WHEN +1*/
-				  left: 0;
-				  margin: auto;
-				  /*WAS 27.5PX*/
-				  /*height: 27.5vw;*/
-				  z-index: 0;
-				}
-				
-				.deco .line {
-				  box-sizing: border-box;
-				  /*THE ROUNDING EDGE OF TWO NEON BARS*/
-				  border-radius: 1.5vw;
-				  /*WAS 1.2VW, .7VW TEAL SHADOW AROUND DECO*/
-				  box-shadow: 0 0 1vw .7vw #024B5D;
-				  /*HEIGHT OF 2 LINES */
-				  /*WAS 3VW, 2VW*/
-				  height: 1.1vw;
-				  /*WIDTH OF 2 LINES*/
-				  /*WAS 90% 60% 50%*/
-				  width: 50%;
-				  /*HOW CLOSE 2 LINES TOUCH THE TOP   */
-				  /*WAS 3VW, 1.5VW, 1.3 1VW*/
-				  margin: .9vw auto;
-				  background: #ACDAB8;
-				  /*THE GREEN LINE IN BETWEEN YELLOW*/
-				  /*WAS 1.3VW, 1.1VW, 1VW, .9VW, .5vw, +1 IS SMALLER*/
-				  border: .4vw solid #FEFAC8;
-				  position: relative;
-				}
-				
-				.deco .line:after {
-				  content: '';
-				  position: relative;
-				  top: 0;
-				  left: 0;
-				  height: .5vw;
-				  width: 100%;
-				  background: #ACDAB8;
-				  box-shadow: 0 0 .2vw .9vw #ACDAB8;
-				  border-radius: .3vw;
-				}
-				
-				@keyframes Flicker {
-				  60%,
-				  80% {
-				    text-shadow: 0 0 0.1vw #DCD5DA, 0.5vw 0.5vw 0.5vw rgba(224, 1, 141, 0.2), -0.5vw -0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0.5vw -0.5vw 0.5vw rgba(224, 1, 141, 0.2), -0.5vw 0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0 -0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0 0.5vw 0.5vw rgba(224, 1, 141, 0.2), 0.5vw 0 0.5vw rgba(224, 1, 141, 0.2), 0 0 #FFF;
-				  }
-				  70%,
-				  100% {
-				    text-shadow: 0 0 0.1vw #FFEFFA, 0.8vw 0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), 0.8vw -0.8vw 0.8vw rgba(224, 1, 141, 0.4), -0.8vw 0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 -0.8vw 0.5vw rgba(224, 1, 141, 0.4), 0 0.8vw 0.8vw rgba(224, 1, 141, 0.4);
-				  }
-				}
+		
+		html {
+  touch-action: none;
+  -ms-content-zooming: none;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: #333;
+  width: 100%;
+  height: 100%;
+}
+
+#screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: #000;
+  user-select: none;
+  overflow: hidden;
+}
+
+#scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translateZ(1000px);
+  -webkit-transform: translateZ(1000px);
+}
+
+#loading {
+  position: absolute;
+  font-family: verdana, monospace;
+  font-size: 0.9em;
+  color: #FFF;
+  width: 200px;
+  height: 100px;
+  margin: -50px -100px;
+  text-align: center;
+}
+
+#scene img {
+  position: absolute;
+  visibility: hidden;
+  margin: -300px -500px;
+  backface-visibility: hidden;
+}
+
+#scene .f {
+  margin: -500px -500px;
+}
+
+#scene .s {
+  width: 252px;
+  height: 600px;
+  margin: -300px -126px;
+}
+
 	</style>
 </head>
 <body>
 
-<h2 class="neon">
-   
-   NOW PLAY<span>I</span>NG
-  
-</h2>
-<div class="deco">
-  <!-- <div class="line"></div> -->
-  <div class="line"></div>
-  <div class="line"></div>
-  <!-- <div class="line"></div> -->
+	<div id="screen">
+    <div id="scene">
+        <div id="loading">Loading...</div>
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg" data-transform="translateZ(-1500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="translateZ(-1000px) rotateY(-90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="translateZ(-1000px) rotateY(90deg) translateZ(-500px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor-big.jpg"
+             data-transform="translateZ(-1000px) rotateX(90deg) translateZ(-300px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
+             data-transform="translateZ(-1000px) rotateX(-90deg) translateZ(-300px)">
+
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="translateX(-1000px) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="translateX(-1000px) rotateY(90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="translateX(-1000px) rotateY(180deg) translateZ(-500px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor-big.jpg"
+             data-transform="translateX(-1000px) rotateX(90deg) translateZ(-300px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
+             data-transform="translateX(-1000px) rotateX(-90deg) translateZ(-300px)">
+
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateZ(-1500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateZ(-1000px) rotateY(-90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateZ(-1000px) rotateY(90deg) translateZ(-500px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor-big.jpg"
+             data-transform="rotateY(180deg) translateZ(-1000px) rotateX(90deg) translateZ(-300px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
+             data-transform="rotateY(180deg) translateZ(-1000px) rotateX(-90deg) translateZ(-300px)">
+
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateX(-1000px) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateX(-1000px) rotateY(90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg"
+             data-transform="rotateY(180deg) translateX(-1000px) rotateY(180deg) translateZ(-500px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor-big.jpg"
+             data-transform="rotateY(180deg) translateX(-1000px) rotateX(90deg) translateZ(-300px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
+             data-transform="rotateY(180deg) translateX(-1000px) rotateX(-90deg) translateZ(-300px)">
+
+<!--       STATUE -->
+        <img class="s" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/statue.png" data-transform="translateZ(-1000px)">
+        <img class="s" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/statue.png"
+             data-transform="rotateY(180deg) translateZ(-1000px)">
+        <img class="s" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/statue.png"
+             data-transform="rotateY(90deg) translateZ(-1000px)">
+        <img class="s" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/statue.png"
+             data-transform="rotateY(-90deg) translateZ(-1000px)">
+
+<!--       CONTENT -->
+        <img src="https://68.media.tumblr.com/a5e7e6d1b082b77ed374f68bae0d830c/tumblr_ofcz4gWk871s56abvo1_1280.png" data-transform="translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.png"
+             data-transform="rotateY(-90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.png"
+             data-transform="rotateY(90deg) translateZ(-500px)">
+        <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.png"
+             data-transform="rotateY(180deg) translateZ(-500px)">
+
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor.jpg"
+             data-transform="rotateX(90deg) translateZ(-300px)">
+        <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
+             data-transform="rotateX(-90deg) translateZ(-300px)">
+    </div>
 </div>
+
+<script type="text/javascript">
+	(function () {
+    window.addEventListener('load', function () {
+        "use strict";
+        var rotation,
+            faces,
+            localTransform = [],
+            screen = animate3d.screen,
+            drag = animate3d.drag,
+            perp = new animate3d.Ease(0.01, 50);
+
+        // Init Screen
+        screen.init("screen", function () {
+        }, true);
+        drag.init(screen);
+
+        faces = document.getElementById("scene").getElementsByTagName("img");
+        rotation = {
+            ex: 0,
+            ey: 0,
+            x: 0,
+            y: 0,
+            tz: 0,
+            tx: 0,
+            ttx: 0,
+            tty: 0,
+            ttz: 0,
+            speedx: 0.1,
+            speedz: 0.1,
+            ease: function (x, y) {
+                this.y = -(this.ey += (x - this.ey) * 0.06) / 3;
+                this.x = (this.ex += (y - this.ex) * 0.06) / 3;
+                var a = this.y * Math.PI / 180;
+                var x = -Math.sin(a) * this.speedx;
+                var z = Math.cos(a) * this.speedz;
+                this.tx += x;
+                this.tz += z;
+                if (drag.active) {
+                    if ((this.tx > 260 && x > 0) || (this.tx < -260 && x < 0)) this.speedx *= 0.9;
+                    else {
+                        if (this.speedx < 0.1) this.speedx = 1;
+                        if (this.speedx < 5) this.speedx *= 1.1;
+                    }
+                    if ((this.tz > 260 && z > 0) || (this.tz < -260 && z < 0)) this.speedz *= 0.9;
+                    else {
+                        if (this.speedz < 0.1) this.speedz = 1;
+                        if (this.speedz < 5) this.speedz *= 1.1;
+                    }
+                } else {
+                    this.speedx *= 0.9;
+                    this.speedz *= 0.9;
+                }
+                a = Math.cos(this.x * Math.PI / 180);
+                this.ttx = -(Math.cos((this.y - 90) * Math.PI / 180) * a) * 400;
+                this.ttz = -(Math.sin((this.y - 90) * Math.PI / 180) * a) * 400;
+                this.tty = Math.sin(this.x * Math.PI / 180) * 100;
+            }
+        };
+
+        // Init Room faces
+        for (var i = 0, n = faces.length; i < n; i++) {
+            var elem = faces[i];
+            var s = elem.getAttribute("data-transform");
+            elem.style.transform = s;
+            elem.style.webkitTransform = s;
+            elem.style.visibility = "visible";
+            localTransform.push(s);
+        }
+
+        // Main running loop
+        function run() {
+            requestAnimationFrame(run);
+            perp.ease(drag.active ? 300 : 500);
+            if (drag.y > 270) drag.y = drag.by = 270;
+            if (drag.y < -270) drag.y = drag.by = -270;
+            rotation.ease(drag.x, drag.y);
+            var globalRotation = "perspective(" + perp.value + "px) rotateX(" + rotation.x + "deg) " + "rotateY(" + rotation.y + "deg) translateX(" + (rotation.tx + rotation.ttx) + "px) translateY(" + rotation.tty + "px) translateZ(" + (rotation.tz + rotation.ttz) + "px)";
+
+            // Animate room faces
+            for (var i = 0, n = faces.length; i < n; i++) {
+                var elem = faces[i];
+                var s = globalRotation + localTransform[i];
+                elem.style.transform = s;
+                elem.style.webkitTransform = s;
+            }
+        }
+
+        // Get.. Set.. Go.. Animate!
+        requestAnimationFrame(run);
+    }, false);
+})();
+</script>
 
 </body>
 </html>
