@@ -135,13 +135,18 @@ body {
 
 <!--       CONTENT -->
         <img src="https://68.media.tumblr.com/a5e7e6d1b082b77ed374f68bae0d830c/tumblr_ofcz4gWk871s56abvo1_1280.png" data-transform="translateZ(-500px)">
+
         <img src="https://68.media.tumblr.com/0f900cbe207ace2906539e25ed43d891/tumblr_ogzrthMySw1s56abvo1_1280.png"
              data-transform="rotateY(-90deg) translateZ(-500px)">
+
         <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.png"
              data-transform="rotateY(90deg) translateZ(-500px)">
+
         <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.png"
              data-transform="rotateY(180deg) translateZ(-500px)">
 
+
+ <!-- FLOOR & CEILING -->
         <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/floor.jpg"
              data-transform="rotateX(90deg) translateZ(-300px)">
         <img class="f" src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/ceiling.jpg"
@@ -150,7 +155,7 @@ body {
 </div>
 
 <script type="text/javascript">
-	(function () {
+(function () {
     window.addEventListener('load', function () {
         "use strict";
         var rotation,
@@ -221,7 +226,8 @@ body {
         // Main running loop
         function run() {
             requestAnimationFrame(run);
-            perp.ease(drag.active ? 300 : 500);
+        // HOW CLOSE WAS 300 BY 500
+            perp.ease(drag.active ? 220 : 420);
             if (drag.y > 270) drag.y = drag.by = 270;
             if (drag.y < -270) drag.y = drag.by = -270;
             rotation.ease(drag.x, drag.y);
@@ -240,6 +246,29 @@ body {
         requestAnimationFrame(run);
     }, false);
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+// RIGHT CLICK
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+function disableclick(event)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;    
+   }
+}
 </script>
 
 </body>
