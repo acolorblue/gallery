@@ -7,84 +7,25 @@
 	<meta name="pinterest" content="nopin" />
 
 
+<link rel="stylesheet" href="stylesheet.css" type="text/css" />
+
+<link rel="stylesheet" href="http://acolorblue.co/stylesheet.css" type="type/css" />
+
+<script src="galleryscript.js"></script>
+
 <script src="http://cdn.rawgit.com/vasanthk/MirrorRoom-CSS-3D/master/js/animate3d.js"></script>
 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
-	<style type="text/css">
-		
-		html {
-  touch-action: none;
-  -ms-content-zooming: none;
-}
-
-body {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  background: #333;
-  width: 100%;
-  height: 100%;
-}
-
-#screen {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
-  background: #000;
-  user-select: none;
-  overflow: hidden;
-}
-
-#scene {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  transform: translateZ(1000px);
-  -webkit-transform: translateZ(1000px);
-}
-
-#loading {
-  position: absolute;
-  font-family: verdana, monospace;
-  font-size: 0.9em;
-  color: #FFF;
-  width: 200px;
-  height: 100px;
-  margin: -50px -100px;
-  text-align: center;
-}
-
-#scene img {
-  position: absolute;
-  visibility: hidden;
-  margin: -300px -500px;
-  backface-visibility: hidden;
-}
-
-#scene .f {
-  margin: -500px -500px;
-}
-
-#scene .s {
-  width: 252px;
-  height: 600px;
-  margin: -300px -126px;
-}
-
-	</style>
 </head>
 <body>
 
 <div oncontextmenu="return false"  id="screen">
     <div id="scene">
       
-<!-- <div id="loading">Loading...</div> -->
+      
+<div id="loading">With Love, ACOLORBLUE.</div>
       
 <!--         <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg" data-transform="translateZ(-1500px)">
       
@@ -143,125 +84,46 @@ body {
       
       
       
-<!--       CONTENT -->
-        <img src="https://raw.githubusercontent.com/acolorblue/gallery/master/images/Introduction%20Wall%20Test%20-%201.jpg" width="1000" height="600" data-transform="translateZ(-500px)">
+<!--       WALLS -->
+<!--       FRONT -->
+        <img src="images/IntroductionWall.jpg" 
+        width="1000" height="600" 
+        data-transform="translateZ(-500px)">
       
-        <img src="https://raw.githubusercontent.com/acolorblue/gallery/master/images/Testing%20Wall%20With%20Artwork%20Card.jpg"
-width="1000" height="600"
-             data-transform="rotateY(-90deg) translateZ(-500px)">
-        <img src="https://raw.githubusercontent.com/acolorblue/gallery/master/images/Testing%20W%20Frame%20And%20Shadow.jpg" width="1000" height="600"
-             data-transform="rotateY(90deg) translateZ(-500px)">
-        <img src="https://raw.githubusercontent.com/acolorblue/gallery/master/images/Testing%20W%20Frame.jpg"
-width="1000" height="600"
-             data-transform="rotateY(180deg) translateZ(-500px)">
+<!--       RIGHT -->
+        <img src="images/RightWall.jpg"
+		width="1000" height="600"
+        data-transform="rotateY(-90deg) translateZ(-500px)">
+      
+<!--       LEFT -->
+        <img src="images/LeftWall.jpg" 
+        width="1000" height="600"
+        data-transform="rotateY(90deg) translateZ(-500px)">
+      
+<!--       BACK -->
+        <img src="images/BackWall.jpg"
+		width="1000" height="600"
+        data-transform="rotateY(180deg) translateZ(-500px)">
+
+      
 
       
       
       
       
-      
-      
-        <img class="f" src="https://raw.githubusercontent.com/acolorblue/gallery/master/images/Grey%20Floor%20-%205.jpg"
+<!--       FLOOR -->
+        <img class="f" src="images/Floor.jpg"
              data-transform="rotateX(90deg) translateZ(-300px)">
-        <img class="f" src="https://github.com/acolorblue/gallery/blob/master/images/WHITE%20ROOF%201000.jpg?raw=true"
+      
+<!--       ROOF -->
+        <img class="f" src="images/Roof.jpg"
+             width="1000" height="1000"
              data-transform="rotateX(-90deg) translateZ(-300px)">
       
       
     </div>
 </div>
 
-<script type="text/javascript">
-(function () {
-    window.addEventListener('load', function () {
-        "use strict";
-        var rotation,
-            faces,
-            localTransform = [],
-            screen = animate3d.screen,
-            drag = animate3d.drag,
-            perp = new animate3d.Ease(0.01, 50);
-
-        // Init Screen
-        screen.init("screen", function () {
-        }, true);
-        drag.init(screen);
-
-        faces = document.getElementById("scene").getElementsByTagName("img");
-        rotation = {
-            ex: 0,
-            ey: 0,
-            x: 0,
-            y: 0,
-            tz: 0,
-            tx: 0,
-            ttx: 0,
-            tty: 0,
-            ttz: 0,
-            speedx: 0.1,
-            speedz: 0.1,
-            ease: function (x, y) {
-                this.y = -(this.ey += (x - this.ey) * 0.06) / 3;
-                this.x = (this.ex += (y - this.ex) * 0.06) / 3;
-                var a = this.y * Math.PI / 180;
-                var x = -Math.sin(a) * this.speedx;
-                var z = Math.cos(a) * this.speedz;
-                this.tx += x;
-                this.tz += z;
-                if (drag.active) {
-                    if ((this.tx > 260 && x > 0) || (this.tx < -260 && x < 0)) this.speedx *= 0.9;
-                    else {
-                        if (this.speedx < 0.1) this.speedx = 1;
-                        if (this.speedx < 5) this.speedx *= 1.1;
-                    }
-                    if ((this.tz > 260 && z > 0) || (this.tz < -260 && z < 0)) this.speedz *= 0.9;
-                    else {
-                        if (this.speedz < 0.1) this.speedz = 1;
-                        if (this.speedz < 5) this.speedz *= 1.1;
-                    }
-                } else {
-                    this.speedx *= 0.9;
-                    this.speedz *= 0.9;
-                }
-                a = Math.cos(this.x * Math.PI / 180);
-                this.ttx = -(Math.cos((this.y - 90) * Math.PI / 180) * a) * 400;
-                this.ttz = -(Math.sin((this.y - 90) * Math.PI / 180) * a) * 400;
-                this.tty = Math.sin(this.x * Math.PI / 180) * 100;
-            }
-        };
-
-        // Init Room faces
-        for (var i = 0, n = faces.length; i < n; i++) {
-            var elem = faces[i];
-            var s = elem.getAttribute("data-transform");
-            elem.style.transform = s;
-            elem.style.webkitTransform = s;
-            elem.style.visibility = "visible";
-            localTransform.push(s);
-        }
-
-        // Main running loop
-        function run() {
-            requestAnimationFrame(run);
-        // HOW CLOSE WAS 300 BY 500
-            perp.ease(drag.active ? 220 : 420);
-            if (drag.y > 270) drag.y = drag.by = 270;
-            if (drag.y < -270) drag.y = drag.by = -270;
-            rotation.ease(drag.x, drag.y);
-            var globalRotation = "perspective(" + perp.value + "px) rotateX(" + rotation.x + "deg) " + "rotateY(" + rotation.y + "deg) translateX(" + (rotation.tx + rotation.ttx) + "px) translateY(" + rotation.tty + "px) translateZ(" + (rotation.tz + rotation.ttz) + "px)";
-
-            // Animate room faces
-            for (var i = 0, n = faces.length; i < n; i++) {
-                var elem = faces[i];
-                var s = globalRotation + localTransform[i];
-                elem.style.transform = s;
-                elem.style.webkitTransform = s;
-            }
-        }
-
-        // Get.. Set.. Go.. Animate!
-        requestAnimationFrame(run);
-    }, false);
-})();
 
 
 
@@ -274,18 +136,22 @@ width="1000" height="600"
 
 
 
-// RIGHT CLICK
-document.onmousedown=disableclick;
-status="Right Click Disabled";
-function disableclick(event)
-{
-  if(event.button==2)
-   {
-     alert(status);
-     return false;    
-   }
-}
-</script>
+
+
+
+
+
+
+
+<!-- SOUNDCLOUD PLAYER -->
+<div class="bodysoundcloud">
+  
+  <section role="main" class="main wrapper">
+    <a href="https://soundcloud.com/mateo-s-1/sets/frank-ocean-endless" class="sc-player"></a>
+  </section>
+  
+</div>
+
 
 </body>
 </html>

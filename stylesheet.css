@@ -1,0 +1,562 @@
+html {
+  touch-action: none;
+  -ms-content-zooming: none;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: #333;
+  width: 100%;
+  height: 100%;
+}
+
+#screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: #000;
+  user-select: none;
+  overflow: hidden;
+}
+
+#scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translateZ(1000px);
+  -webkit-transform: translateZ(1000px);
+}
+
+#loading {
+  position: absolute;
+  font-family: ahamonomonospaced,verdana, monospace;
+  font-size: 14px;
+  color: #FFF;
+  width: 200px;
+  height: 100px;
+  margin: -50px -100px;
+  text-align: center;
+}
+
+#scene img {
+  position: absolute;
+  visibility: hidden;
+  margin: -300px -500px;
+  backface-visibility: hidden;
+}
+
+#scene .f {
+  margin: -500px -500px;
+}
+
+#scene .s {
+  width: 252px;
+  height: 600px;
+  margin: -300px -126px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SOUNDCLOUD CSS */
+/* LAYOUT *
+-----------------------------------------------*/
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+* {
+  box-sizing: border-box;
+}
+/* COLORS *
+-----------------------------------------------*/
+bodysoundcloud {
+  margin: 0;
+  background-color: white;
+  color: white;
+  text-align: center;
+  font-family: "ahamonomonospaced", "Courier New";
+}
+@media screen and (min-width: 38em) {
+  bodysoundcloud {
+    font-size: 52.5%;
+  }
+}
+.wrapper.bodysoundcloud {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+p.small {
+  font-size: 0.8em;
+}
+a {
+  color: #9c3538;
+}
+a:hover {
+  color: #bf3d3f;
+}
+a.sc-player,
+.button {
+  display: inline-block;
+  background: #bf3d3f;
+  background: rgba(19, 19, 19, 0.14);
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  color: #f8f8f8;
+  font-size: 1.5em;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+a.sc-player:hover,
+.button:hover {
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.24);
+  color: #f8f8f8;
+}
+.main.bodysoundcloud {
+  margin-bottom: 4em;
+}
+.transition {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+/* FONT *
+-----------------------------------------------*/
+.display {
+  font-family: "ahamonomonospaced", "Courier New";
+}
+h1.soundcloud {
+  display: none;
+  margin-top: 50px;
+  font-family: "ahamonomonospaced", "Courier New";
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+@media screen and (min-width: 20em) {
+  h1.soundcloud {
+    font-size: 2.5em;
+  }
+}
+@media screen and (min-width: 38em) {
+  h1.soundcloud {
+    font-size: 4.5em;
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 68em) {
+  h1.soundcloud {
+    font-size: 6em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SOUNDCLOUD PLAYER *
+-----------------------------------------------*/
+.sc-player {
+  position: relative;
+  margin-bottom: 2em;
+  *zoom: 1;
+}
+.sc-player a {
+  text-decoration: none;
+  color: #fff;
+}
+.sc-player ol,
+.sc-player li {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+/* Artworks */
+.sc-player .sc-artwork-list {
+  display: none;
+  float: left;
+  width: 40%;
+  margin-bottom: 3%;
+  background-color: transparent;
+  list-style-type: none;
+  position: relative;
+  height: 100%;
+}
+.sc-player .sc-artwork-list li {
+  list-style-type: none;
+  display: none;
+}
+.sc-player .sc-artwork-list li.active {
+  list-style-type: none;
+  display: block;
+}
+.sc-player .sc-artwork-list li img,
+.sc-player .sc-artwork-list li div {
+  list-style-type: none;
+  width: 100%;
+  height: auto;
+}
+/* controls */
+.sc-player .sc-controls {
+  display: block;
+}
+.sc-player .sc-controls a {
+  text-indent: -9999px;
+  content: '';
+  display: block;
+  background: rgba(19, 19, 19, 0.12);
+  border-radius: 5%;
+  /* WAS 150PX, 75 */
+  width: 55px;
+  height: 55px;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  float: right;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  /* Size of surronding before Shrinking */
+}
+@media screen and (min-width: 38em) {
+  .sc-player .sc-controls a {
+    /* WAS 220PX */
+    width: 55px;
+    height: 55px;
+  }
+}
+.sc-player .sc-controls a:hover {
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.22);
+}
+.sc-player .sc-controls a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  /* was -50px */
+  margin-top: -25px;
+  left: 50%;
+  margin-left: -25px;
+  z-index: 1;
+  /* background: url('http://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/play-pause.png'); */
+  background: url('http://nicholaspetersen.is/wp-content/themes/v3/images/play.png');
+  background-position: top;
+  /* WAS 100px, 55px */
+  background-size: 45px auto;
+  border-radius: 50%;
+  /* WAS 100PX, 55px */
+  width: 45px;
+  height: 45px;
+}
+@media screen and (min-width: 38em) {
+  .sc-player .sc-controls a:after {
+    /* WAS 180PX, 45px */
+    width: 45px;
+    height: 45px;
+    /* WAS -90px */
+    margin-top: -22.5px;
+    margin-left: -22.5px;
+    /* WAS 180px auto */
+    background-size: 45px auto;
+  }
+}
+/* PLAY STROKES */
+.sc-player .sc-controls a.sc-pause:after {
+  background-position: bottom;
+}
+.sc-scrubber .sc-time-indicators {
+  display: none;
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.22);
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px;
+  text-align: right;
+}
+.sc-player .sc-controls a.sc-pause {
+  display: none;
+}
+.sc-player.playing .sc-controls a.sc-play {
+  display: none;
+}
+.sc-player.playing .sc-controls a.sc-pause {
+  display: block;
+}
+/* scrubber */
+.sc-scrubber {
+  display: none;
+  position: relative;
+  float: right;
+  width: 100%;
+  margin: 0.5em 0;
+  border-radius: 4px;
+}
+@media screen and (min-width: 38em) {
+  .sc-scrubber {
+    /* margin-top: 20px; */
+  }
+}
+.sc-scrubber .sc-time-span {
+  height: 100px;
+  position: relative;
+}
+.sc-scrubber .sc-buffer,
+.sc-scrubber .sc-played {
+  height: 100px;
+  position: absolute;
+  top: 0;
+}
+.sc-scrubber .sc-time-indicators {
+  position: absolute;
+  right: 0;
+  top: -48px;
+}
+.sc-scrubber .sc-time-span {
+  /* background-color: #666; */
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sc-scrubber .sc-volume-slider {
+  background-color: #bf3d3f;
+  background-color: rgba(19, 19, 19, 0.12);
+  border-radius: 2px;
+}
+.sc-scrubber .sc-volume-slider .sc-volume-status {
+  background-color: #9c3538;
+  background-color: rgba(19, 19, 19, 0.22);
+  border-right: 1px solid #9c3538;
+  border-right: 1px solid rgba(19, 19, 19, 0.22);
+  /* border-right: 1px solid white; */
+}
+.sc-scrubber .sc-waveform-container {
+  z-index: 800;
+  width: 100%;
+  position: absolute;
+}
+.sc-scrubber .sc-time-span img {
+  height: 100px;
+  width: 100%;
+  border-radius: 4px;
+}
+.sc-scrubber .sc-buffer {
+  background: #bf3d3f;
+  background: rgba(19, 19, 19, 0.12);
+  z-index: 1;
+  position: absolute;
+}
+.sc-scrubber .sc-played {
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.22);
+  z-index: 799;
+}
+/* volume control */
+.sc-volume-slider {
+  display: none;
+  top: -35px;
+  left: 0px;
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  background-color: white;
+}
+.sc-volume-slider .sc-volume-status {
+  position: absolute;
+  width: 0%;
+  height: 20px;
+  top: 0;
+  left: 0;
+}
+/* tracks */
+/* Track listings*/
+.sc-player ol.sc-trackslist {
+  display: none;
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+.sc-player ol.sc-trackslist li {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 4%;
+  background: #bf3d3f;
+  background: rgba(19, 19, 19, 0.12);
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+  text-align: left;
+}
+@media screen and (min-width: 38em) {
+  .sc-player ol.sc-trackslist li {
+    padding: 2%;
+  }
+}
+.sc-player ol.sc-trackslist li:last-child {
+  margin-bottom: 0;
+}
+.sc-player ol.sc-trackslist li a {
+  font-size: 1.125em;
+}
+@media screen and (min-width: 38em) {
+  .sc-player ol.sc-trackslist li a {
+    font-size: 2em;
+  }
+}
+.sc-player ol.sc-trackslist li:hover {
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.22);
+}
+.sc-player ol.sc-trackslist li.active {
+  background: #9c3538;
+  background: rgba(19, 19, 19, 0.32);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.sc-player ol.sc-trackslist li.active a {
+  color: #fff;
+}
+/* LENGTH OF TRACK INDICATION */
+.sc-track-duration {
+  display: none;
+  float: right;
+  margin-top: 0.25em;
+}
+@media screen and (min-width: 38em) {
+  .sc-track-duration {
+    margin-top: 0.5em;
+  }
+}
+/* Track info*/
+.sc-player .sc-info {
+  display: none;
+  position: relative;
+  margin-bottom: 2em;
+  padding: 1% 3%;
+  /* TITLE OF SONG */
+}
+@media screen and (min-width: 38em) {
+  .sc-player .sc-info {
+    display: none;
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+}
+.sc-player .sc-info h3.bodysoundcloud {
+  display: none;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.sc-player .sc-info h4.bodysoundcloud {
+  display: none;
+}
+.sc-player .sc-info .sc-info a {
+  color: #fff;
+}
+/* PARAGRAPH */
+p.bodysoundcloud {
+  display: none;
+  max-width: 38em;
+  max-width: 38rem;
+  margin: 0 auto 1em;
+  line-height: 1.5;
+  text-align: left;
+}
+.sc-player .sc-info-toggle,
+.sc-player .sc-info-close {
+  display: none;
+}
+/* utilities */
+.sc-player .hidden {
+  /* display: none; */
+}
+.sc-player-engine-container {
+  width: 1px;
+  height: 1px;
+  position: fixed;
+  top: 2px;
+  left: 2px;
+}
+.sc-player .sc-info-toggle {
+  background: #22B573;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px;
+}
+.sc-player .sc-info-toggle:hover {
+  background: #333;
+  color: #fff;
+}
+.sc-player .sc-info-close {
+  background: #22B573;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: bold;
+}
