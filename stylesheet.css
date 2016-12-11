@@ -102,145 +102,6 @@ body {
 }
 /* COLORS *
 -----------------------------------------------*/
-bodysoundcloud {
-  margin: 0;
-  background-color: white;
-  color: white;
-  text-align: center;
-  font-family: "ahamonomonospaced", "Courier New";
-}
-@media screen and (min-width: 38em) {
-  bodysoundcloud {
-    font-size: 52.5%;
-  }
-}
-.wrapper.bodysoundcloud {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-p.small {
-  font-size: 0.8em;
-}
-a {
-  color: #9c3538;
-}
-a:hover {
-  color: #bf3d3f;
-}
-a.sc-player,
-.button {
-  display: inline-block;
-  background: #bf3d3f;
-  background: rgba(19, 19, 19, 0.14);
-  border-radius: 4px;
-  padding: 1em 1.5em;
-  text-align: center;
-  text-decoration: none;
-  color: #f8f8f8;
-  font-size: 1.5em;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-a.sc-player:hover,
-.button:hover {
-  background: #9c3538;
-  background: rgba(19, 19, 19, 0.24);
-  color: #f8f8f8;
-}
-.main.bodysoundcloud {
-  margin-bottom: 4em;
-}
-.transition {
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-/* FONT *
------------------------------------------------*/
-.display {
-  font-family: "ahamonomonospaced", "Courier New";
-}
-h1.soundcloud {
-  display: none;
-  margin-top: 50px;
-  font-family: "ahamonomonospaced", "Courier New";
-  text-transform: uppercase;
-  font-size: 2em;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-}
-@media screen and (min-width: 20em) {
-  h1.soundcloud {
-    font-size: 2.5em;
-  }
-}
-@media screen and (min-width: 38em) {
-  h1.soundcloud {
-    font-size: 4.5em;
-    margin-top: 100px;
-  }
-}
-@media screen and (min-width: 68em) {
-  h1.soundcloud {
-    font-size: 6em;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* SOUNDCLOUD PLAYER *
------------------------------------------------*/
-/* LAYOUT *
------------------------------------------------*/
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.cf:after {
-  clear: both;
-}
-.cf {
-  *zoom: 1;
-}
-* {
-  box-sizing: border-box;
-}
-/* COLORS *
------------------------------------------------*/
 .bodysoundcloud {
   margin: 0;
   background-color: white;
@@ -325,6 +186,39 @@ h1.soundcloud {
     font-size: 6em;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* SOUNDCLOUD PLAYER *
 -----------------------------------------------*/
 .sc-player {
