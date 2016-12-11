@@ -241,7 +241,7 @@ h1.soundcloud {
 }
 /* COLORS *
 -----------------------------------------------*/
-bodysoundcloud {
+.bodysoundcloud {
   margin: 0;
   background-color: white;
   color: white;
