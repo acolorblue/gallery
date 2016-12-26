@@ -103,7 +103,7 @@
 
 // RIGHT CLICK
 document.onmousedown=disableclick;
-status="Right Click Disabled";
+status=" Shoutout Steve Jobs ¯|_(ツ)_|¯ ";
 function disableclick(event)
 {
   if(event.button==2)
@@ -885,3 +885,106 @@ function disableclick(event)
   });
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SUB MENU
+var button = document.querySelector('.popup'),
+    items = document.querySelectorAll('.trigger');
+var openCloseMenu = function() {
+  for(i=0; i < items.length; i++){
+    items[i].classList.toggle('slideout');
+  }
+}
+button.onclick = openCloseMenu;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Automated Text
+var $lines = $('.prompt p');
+$lines.hide();
+var lineContents = new Array();
+
+var terminal = function() {
+
+
+  var skip = 0;
+  typeLine = function(idx) {
+    idx == null && (idx = 0);
+    var element = $lines.eq(idx);
+    var content = lineContents[idx];
+    if(typeof content == "undefined") {
+      $('.skip').hide();
+      return;
+    }
+    var charIdx = 0;
+
+    var typeChar = function() {
+      
+// Speed, Was 150 + 25
+      var rand = Math.round(Math.random() * 80) + 25;
+
+      setTimeout(function() {
+        var char = content[charIdx++];
+        element.append(char);
+        if(typeof char !== "undefined")
+          typeChar();
+        else {
+          element.append('<br/><span class="output">' + element.text().slice(9, -1) + '</span>');
+          element.removeClass('active');
+          typeLine(++idx);
+        }
+      }, skip ? 0 : rand);
+    }
+    content = '' + content + '';
+    element.append(' ').addClass('active');
+    typeChar();
+  }
+
+  $lines.each(function(i) {
+    lineContents[i] = $(this).text();
+    $(this).text('').show();
+  });
+
+  typeLine();
+}
+
+terminal();
