@@ -103,7 +103,7 @@
 
 // RIGHT CLICK
 document.onmousedown=disableclick;
-status=" Shoutout Steve Jobs ¯|_(ツ)_|¯ ";
+status=" ¯|_(ツ)_|¯ ";
 function disableclick(event)
 {
   if(event.button==2)
