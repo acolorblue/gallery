@@ -131,7 +131,7 @@ body {
   background: #333;
   width: 100%;
   height: 100%;
-  font-family: ahamonomonospaced;
+  font-family: "ahamonomonospaced";
   text-transform: uppercase;
 }
 
@@ -166,7 +166,7 @@ body {
 
 #loading {
   position: absolute;
-  font-family: ahamonomonospaced,verdana, monospace;
+  font-family: "ahamonomonospaced", verdana, monospace;
   font-size: 14px;
   color: #FFF;
   width: 200px;
