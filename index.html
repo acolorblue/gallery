@@ -25,8 +25,22 @@
 <div oncontextmenu="return false"  id="screen">
     <div id="scene">
       
-      
+<!--       LOADING -->
 <div id="loading">With Love, ACOLORBLUE...</div>
+      
+      
+<!-- <div class="typing-indicator">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>       -->
+      
+      
+      
+      
+      
+      
+      
       
 <!--         <img src="https://raw.githubusercontent.com/vasanthk/MirrorRoom-CSS-3D/master/images/wall-mirror.jpg" data-transform="translateZ(-1500px)">
       
@@ -86,6 +100,8 @@
       
       
 <!--       WALLS -->
+      
+      
 <!--       FRONT -->
         <img src="https://github.com/acolorblue/gallery/blob/master/images/PREVIEW/NEW%20PREVIEW%20Front%20Wall%20W:%20No%20Genius%202.jpg?raw=true" width="1000" height="600" data-transform="translateZ(-500px)">
       
@@ -249,6 +265,29 @@ width="1000" height="600"
 <script type="text/javascript">
 	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (function () {
     window.addEventListener('load', function () {
         "use strict";
@@ -353,16 +392,16 @@ width="1000" height="600"
 
 
 // RIGHT CLICK
-document.onmousedown=disableclick;
-status=" ¯|_(ツ)_|¯ ";
-function disableclick(event)
-{
-  if(event.button==2)
-   {
-     alert(status);
-     return false;    
-   }
-}
+// document.onmousedown=disableclick;
+// status=" ¯|_(ツ)_|¯ ";
+// function disableclick(event)
+// {
+//   if(event.button==2)
+//    {
+//      alert(status);
+//      return false;    
+//    }
+// }
 
 
 
@@ -395,10 +434,7 @@ function disableclick(event)
 
 
 // SOUNDCLOUD PLAYER
-/*
- *   Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- *   The link will be automatically replaced by the HTML based player
+/*   The link will be automatically replaced by the HTML based player
  */
 (function($) {
   /* Convert milliseconds into Hours (h), Minutes (m), and Seconds (s) */
@@ -1174,7 +1210,14 @@ button.onclick = openCloseMenu;
 
 
 
+/* Scrolling */
 
+var Scrolling = function(intSelect){
+  var strID = intSelect.toString();
+  var elmnt = document.getElementsByClassName("creditsnav");
+   elmnt.scrollTop = SelectMovie*intSelect;
+  
+}
 
 
 
@@ -1210,8 +1253,8 @@ var terminal = function() {
 
     var typeChar = function() {
       
-// Speed, Was 150 + 25
-      var rand = Math.round(Math.random() * 80) + 25;
+// Speed, Was 150, 80 + 25
+      var rand = Math.round(Math.random() * 40) + 25;
 
       setTimeout(function() {
         var char = content[charIdx++];
@@ -1240,6 +1283,30 @@ var terminal = function() {
 
 terminal();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SAVE IMAGE AS
+$("body").on("contextmenu", "img", function(e) {
+  return false;
+});
 
 </script>
 
