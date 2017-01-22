@@ -836,9 +836,9 @@ button:focus {
 /* ADJUST ROLL UP DISTANCE */
 /* WAS -22.5em, -28.6em, -32.43em, 39.59em */
 .submenu.trigger.slideout {
-  -webkit-transform: translateY(-39.57em) translateX(0em);
-  -moz-transform: translateY(-39.57em) translateX(0em);
-  transform: translateY(-35.4em) translateX(-8.2em);
+  -webkit-transform: translateY(-35.3em) translateX(-8.2em);
+  -moz-transform: translateY(-35.3em) translateX(-8.2em);
+  transform: translateY(-35.3em) translateX(-8.2em);
 }
 
 
@@ -1372,7 +1372,7 @@ margin-bottom: -75px;
 .commentsnav .submenu.triggercomments.slideout {
   -webkit-transform: translateY(-45.5em) translateX(5.7em);
   -moz-transform: translateY(-45.5em) translateX(5.7em);
-  transform: translateY(-45.5em) translateX(5.7em);
+  transform: translateY(-45.3em) translateX(5.7em);
 }
 
 
