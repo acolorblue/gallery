@@ -299,7 +299,7 @@ width="1000" height="600"
 
                 <!--        Nykhor In Bloom -->
                 <div class="artworkcard">
-                  <p class="artworknumber">1.</p>
+                 
                   <p class="artistname">Kasia Bielska</p>
                   <p class="artworktitle">'Nykhor In Bloom'</p>
                   <p class="artistgallery">Unknown Gallery</p>
@@ -309,7 +309,7 @@ width="1000" height="600"
 
                 <!--    Still From The Enclave     -->
                 <div class="artworkcard">
-                  <p class="artworknumber">2.</p>
+                  
                   <p class="artistname">Richard Mosse</p>
                   <p class="artworktitle">Still from 'The Enclave'</p>
                   <p class="artistgallery">Jack Shainman Gallery</p>
@@ -319,7 +319,7 @@ width="1000" height="600"
 
                 <!--      Champion' from 'Everything Is American' -->
                 <div class="artworkcard">
-                  <p class="artworknumber">3.</p>
+                 
                   <p class="artistname">Charlie White</p>
                   <p class="artworktitle">'Champion' from 'Everything Is American'</p>
                   <p class="artistgallery">Andrea Rosen Gallery</p>
@@ -329,7 +329,7 @@ width="1000" height="600"
 
                 <!--        Rome Pays Off -->
                 <div class="artworkcard">
-                  <p class="artworknumber">4.</p>
+                  
                   <p class="artistname">Jean-Michel Basquiat</p>
                   <p class="artworktitle">'Rome Pays Off'</p>
                   <p class="artistgallery">Cheryl Hazan Gallery</p>
@@ -339,7 +339,7 @@ width="1000" height="600"
 
                 <!--        Untitled #3 -->
                 <div class="artworkcard">
-                  <p class="artworknumber">5.</p>
+                  
                   <p class="artistname">Ren Hang</p>
                   <p class="artworktitle">'Untitled #3'</p>
                   <p class="artistgallery">Tryffelgrisen Gallery</p>
@@ -349,7 +349,7 @@ width="1000" height="600"
 
                 <!--        Eyesight -->
                 <div class="artworkcard">
-                  <p class="artworknumber">6.</p>
+                 
                   <p class="artistname">Yue Minjun</p>
                   <p class="artworktitle">'Eyesight'</p>
                   <p class="artistgallery">Saatchi Gallery</p>
@@ -359,7 +359,7 @@ width="1000" height="600"
 
                 <!--        Untitled #3 - Xue Jiye -->
                 <div class="artworkcard">
-                  <p class="artworknumber">7.</p>
+                  
                   <p class="artistname">Xue Jiye</p>
                   <p class="artworktitle">'Untitled #3'</p>
                   <p class="artistgallery">Art Scene Warehouse Gallery</p>
@@ -369,7 +369,7 @@ width="1000" height="600"
 
                 <!--       A Portrait of the Artist  -->
                 <div class="artworkcard">
-                  <p class="artworknumber">8.</p>
+                  
                   <p class="artistname">Kerry James Marshall</p>
                   <p class="artworktitle">'A Portrait of the Artist as a Shadow of His Former Self'</p>
                   <p class="artistgallery">Jack Shainman Gallery</p>
@@ -589,6 +589,7 @@ width="1000" height="600"
 <script type="text/javascript">
 	
 
+
 (function () {
     window.addEventListener('load', function () {
         "use strict";
@@ -677,12 +678,18 @@ width="1000" height="600"
         }
 
         // Get.. Set.. Go.. Animate!
-        requestAnimationFrame(run);
+        requestAnimationFrame(run)
+  
     }, false);
 })();
 
-
-
+ if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+          $("img").hide();
+      $("#loadingwithoutrotate").hide();
+      $("#rotate").hide();
+      $(".gif").prepend('<h3 id="Mozilla"> Please use a different browser such as Google Chrome, Safari, etc.</h3>');
+    }
 
 
 
@@ -692,8 +699,10 @@ function doOnOrientationChange()
     {  
       case -90:
       case 90:
+        
       $("img").show();
         $("#loading").show();
+       
         break; 
       default:
        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -714,16 +723,16 @@ function doOnOrientationChange()
 
 
 // RIGHT CLICK
-// document.onmousedown=disableclick;
-// status=" ¯|_(ツ)_|¯ ";
-// function disableclick(event)
-// {
-//   if(event.button==2)
-//    {
-//      alert(status);
-//      return false;    
-//    }
-// }
+ document.onmousedown=disableclick;
+ status=" ¯|_(ツ)_|¯ ";
+ function disableclick(event)
+ {
+   if(event.button==2)
+    {
+      alert(status);
+      return false;    
+    }
+ }
 
 
 
@@ -1815,6 +1824,7 @@ function slugify(text) {
     .replace(/[\s\W-]+/g, '-')
     .replace(/[^a-zA-Z0-9-_]+/g,'');
 }
+
 
 </script>
 
