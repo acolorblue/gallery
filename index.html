@@ -6,13 +6,42 @@
 
 <meta name="pinterest" content="nopin" />
 
+<meta name="viewport" content="user-scalable=no" />
+
+<!-- Main CSS -->
 <link rel="stylesheet" href="stylesheet.css" type="text/css" />
 
 <link rel="stylesheet" href="http://acolorblue.co/fonts/ahamonomonospaced/stylesheet.css" type="text/css"/>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css"/>
+
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" type="text/css"/>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"/>
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Open+Sans:400" type="text/css"/>
+
+
+<!-- SCRIPT LINKS -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script src="http://cdn.rawgit.com/vasanthk/MirrorRoom-CSS-3D/master/js/animate3d.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+
+<!-- FIREBSE SCRIPT -->
+<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.0/moment.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.1.0/js/md5.js"></script>
+
+<script src=""></script>
 
 <!-- <script src="galleryscript.js"></script> -->
 
@@ -21,11 +50,17 @@
 </head>
 <body>
 
-<div oncontextmenu="return false"  id="screen">
+<div tabindex="0" oncontextmenu="return false"  id="screen">
     <div id="scene">
       
 <!--       LOADING -->
-<div id="loading">With Love, ACOLORBLUE...</div>
+       
+      
+<div class="loading" id="loadingwithoutrotate">Loading...</div>
+      
+<div class="loading gif"><div >
+  <img id="rotate"  src="http://support.volvocars.com/SiteCollectionDocuments/theGuide/V90/images/_system/rotate.gif"></div></div>
+      
       
       
 <!-- <div class="typing-indicator">
@@ -102,7 +137,7 @@
       
       
 <!--       FRONT -->
-        <img src="https://github.com/acolorblue/gallery/blob/master/images/PREVIEW/NEW%20PREVIEW%20Front%20Wall%20W:%20No%20Genius%202.jpg?raw=true" width="1000" height="600" data-transform="translateZ(-500px)">
+        <img  src="https://github.com/acolorblue/gallery/blob/master/images/PREVIEW/NEW%20PREVIEW%20Front%20Wall%20W:%20No%20Genius%202.jpg?raw=true" width="1000" height="600" data-transform="translateZ(-500px)">
       
 <!--       RIGHT -->
         <img src="https://github.com/acolorblue/gallery/blob/master/images/PREVIEW/NEW%20PREVIEW%20Right%20Wall.jpg?raw=true"
@@ -183,7 +218,7 @@ width="1000" height="600"
 
 
 
-<!-- SUB MENU -->
+<!-- CREDITS SUB MENU -->
 <div class="creditsnav">
   
 <!--  "submenu" replaces ul  -->
@@ -194,63 +229,185 @@ width="1000" height="600"
 <!--       <a href="#" class="menufont">ONE</a> -->
       
       
-      <div class="credits">
-<div class="noisy"></div>
+      
+      
+      
+      
+      <div class="bodytexteditor">
+<div class='mactopbar'>
+  <i class='fa fa-apple'></i>
+</div>
 
-<div class="emblem"><span class="icon-information"></span></div>
-<div class="frame">
-  <div class="piece output">
-    
-    
-     <main class="prompt">  
-    
-    <p class="h1">CREDITS</p>
-    
-    
-    
-    <p class="h2"> Work </p>
-    <p>1. 'Nykhor In Bloom', By Kasia Bielska.</p>
-    <p>2. Still from 'The Enclave', By Richard Mosse.</p>
-    <p>3. 'Champion' from 'Everything Is American', By Charlie White.</p>
-    <p>4. 'Rome Pays Off', By Jean-Michel Basquiat.</p>
-    <p>5. 'Untitled #3', By Ren Hang.</p>
-    <p>6. 'Eyesight', By Yue Minjun.</p>
-    <p>7. 'Untitled #3', By Xue Jiye.</p>
-    <p>8. 'A Portrait of the Artist as a Shadow of His Former Self', By Kerry James Marshall.</p>
-    
-    
-    <p class="h2"> CURATION </p>
-    <p>ACOLORBLUE </p>
-    
-    
-    
-    <p class="h2"> MUSIC </p>
-    <p>Frank Ocean - Endless Album </p>
-    <p>
-     <a class="creditslink" href="https://soundcloud.com/mateo-s-1/sets/frank-ocean-endless" target="_blank"><i>Listen On Soundcloud</i></a>
-    </p>
-    
-    
-    <p class="h2"> DESIGN </p>
-    <p>ACOLORBLUE </p>
-    
-    
-    
-    <p class="h2"> SOFTWARE </p>
-    <p>ACOLORBLUE </p>
-    
-    
-    <p class="h6">Thank you all.</p>
-    <p class="h6">With Love & A alot of sleepless nights, ACOLORBLUE.</p>
-    
-    </main>
-    
-    
+
+<button class="texticon">
+  <i class='fa fa-file-text-o fa-3x'></i>
+  <br>
+  <br>
+  <span>Credits.txt</span>
+</button>
+
+
+<button class="mp3">
+  <a href="https://soundcloud.com/acolorblue/sets/acb-show/s-wovwF" target="_blank">
+  <img src="http://www.iconarchive.com/download/i80491/uiconstock/socialmedia/Soundcloud.ico" width="58" height="65" title="Playlist.mp3">
+  </a>
+  <br>
+  <span>Playlist.mp3</span>
+</button>
+
+
+
+
+<div class='texteditorapp'>
+  <div class='top'>
+    <div class='buttons'>
+      <div class='circle close'>
+      
+      <a onclick="hide('window')" class="closebutton" href="#"><span><strong>x</strong></span></a>
+        
+      </div>
+      
+      <div class='circle minimize'>
+      
+       <a onclick="minimize('window')" class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+        
+      </div>
+      <div class='circle zoom'>
+      
+      <a onclick="zoom('window')"class="zoombutton" href="#"><span><strong>+</strong></span></a>
+        
+      </div>
+    </div>
+    <div class='title'>
+      Credits.txt
+    </div>
+    <div class='info'>
+      Saved
+    </div>
+    <div class='clear'></div>
   </div>
-  <div class="piece scanlines noclick"></div>
-  <div class="piece glow noclick"></div>
+  <div class='main'>
+    <p class='words'>578 words</p>
+    <div class='content'>
+      
+     
+     
+     <main class="prompt">
+
+                <p class="italic h2"> Work </p>
+
+
+                <!--        Nykhor In Bloom -->
+                <div class="artworkcard">
+                  <p class="artworknumber">1.</p>
+                  <p class="artistname">Kasia Bielska</p>
+                  <p class="artworktitle">'Nykhor In Bloom'</p>
+                  <p class="artistgallery">Unknown Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--    Still From The Enclave     -->
+                <div class="artworkcard">
+                  <p class="artworknumber">2.</p>
+                  <p class="artistname">Richard Mosse</p>
+                  <p class="artworktitle">Still from 'The Enclave'</p>
+                  <p class="artistgallery">Jack Shainman Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--      Champion' from 'Everything Is American' -->
+                <div class="artworkcard">
+                  <p class="artworknumber">3.</p>
+                  <p class="artistname">Charlie White</p>
+                  <p class="artworktitle">'Champion' from 'Everything Is American'</p>
+                  <p class="artistgallery">Andrea Rosen Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--        Rome Pays Off -->
+                <div class="artworkcard">
+                  <p class="artworknumber">4.</p>
+                  <p class="artistname">Jean-Michel Basquiat</p>
+                  <p class="artworktitle">'Rome Pays Off'</p>
+                  <p class="artistgallery">Cheryl Hazan Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--        Untitled #3 -->
+                <div class="artworkcard">
+                  <p class="artworknumber">5.</p>
+                  <p class="artistname">Ren Hang</p>
+                  <p class="artworktitle">'Untitled #3'</p>
+                  <p class="artistgallery">Tryffelgrisen Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--        Eyesight -->
+                <div class="artworkcard">
+                  <p class="artworknumber">6.</p>
+                  <p class="artistname">Yue Minjun</p>
+                  <p class="artworktitle">'Eyesight'</p>
+                  <p class="artistgallery">Saatchi Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--        Untitled #3 - Xue Jiye -->
+                <div class="artworkcard">
+                  <p class="artworknumber">7.</p>
+                  <p class="artistname">Xue Jiye</p>
+                  <p class="artworktitle">'Untitled #3'</p>
+                  <p class="artistgallery">Art Scene Warehouse Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+
+                <!--       A Portrait of the Artist  -->
+                <div class="artworkcard">
+                  <p class="artworknumber">8.</p>
+                  <p class="artistname">Kerry James Marshall</p>
+                  <p class="artworktitle">'A Portrait of the Artist as a Shadow of His Former Self'</p>
+                  <p class="artistgallery">Jack Shainman Gallery</p>
+                  <p class="artworkprice">$xx</p>
+                </div>
+
+              
+               <div class="creditsection">
+                <p class="italic h2"> CURATION </p>
+                <p>ACOLORBLUE </p>
+               </div>
+
+               <div class="creditsection">
+                <p class="italic h2"> DESIGN </p>
+                <p>ACOLORBLUE </p>
+               </div>
+
+               <div class="creditsection">
+                <p class="italic h2"> SOFTWARE </p>
+                <p>ACOLORBLUE </p>
+               </div>
+
+               <div class="creditsection">
+                <p class="h6">Thank you all.</p>
+                <p class="h6">With Love & A alot of sleepless nights, ACOLORBLUE.</p>
+                </div>
+              </main>
+
+      
+      
+    </div>
+  </div>
 </div>
 </div>
+      
+      
+      
+  
       
       
       
@@ -261,31 +418,176 @@ width="1000" height="600"
   <button class="popup">CREDITS</button>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- iMESSAGE COMMENTS -->
+<div class="commentsnav">
+  
+<!--  "submenu" replaces ul  -->
+  <div class="triggercomments submenu">
+    
+<!--  "submenucontent" replaces li -->
+    <div class="submenucontent menufont">
+<!--       <a href="#" class="menufont">ONE</a> -->
+      
+      
+ 
+      
+      
+<div class="iphone">
+    <div class="iphone-top">
+      <span class="camera"></span>
+      <span class="sensor"></span>
+      <span class="speaker"></span>
+    </div>
+    <div class="top-bar"></div>
+    <div class="iphone-screen">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+<div class="imessage">
+  <div class="screen">
+
+
+    <form id="comment" method='post' class="chat">
+      <div class="status-bar">
+
+
+        <img src="https://github.com/acolorblue/gallery/blob/master/images/iPhone%20Comments/Status%20Bar%20-%20Official%201.png?raw=true">
+
+      </div>
+
+      <div class="name-bar">
+
+        <div class="name-bar-button">
+          <i class="fa fa-angle-left"></i><span>Messages</span>
+        </div>
+
+
+        <div class="name">
+          <!--         John Doe -->
+
+
+          <input id="name" type="text" name="fullname" class="name" value="@" placeholder="@"><br>
+
+
+        </div>
+
+
+        <div class="name-bar-button" style="float:right;">
+          <span>Details</span>
+        </div>
+      </div>
+
+      <!--  SPINNER -->
+      <span></span>
+
+      <div class="message-screen messages" id="adobewordpress" onclick="">
+        <div class="singlemessage">
+
+
+          <div class="timestamp"><span><b>Today</b> 11:39 AM</span></div>
+          
+         <!-- <div class="sender-text">
+            <p>Lorem</p>
+
+            <date><b class="handlename">@JohnDoe</b> 08.03.2016 14:30:7</date>
+          </div> -->
+
+        </div>
+      </div>
+
+
+      <div class="input-bar">
+
+        <i class="fa fa-camera"></i>
+
+        <input type="text" id="message" placeholder="Comment..." name="comment" value=""></input>
+
+        <input type="submit" value="Send" class="input-bar-button" id="send">
+
+      </div>
+
+      <!-- COMMENT SECTION -->
+      <div class="comments"></div>
+
+    </form>
+
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    </div>
+    <div class="buttons">
+      <span class="on-off"></span>
+      <span class="sleep"></span>
+      <span class="up"></span>
+      <span class="down"></span>
+    </div>
+    <div class="bottom-bar"></div>
+    <div class="iphone-bottom">
+      <span></span>
+    </div>
+  </div>
+
+      
+      
+      
+      
+      
+    </div>
+    
+    
+  </div>
+  <button class="popupcomments">COMMENTS</button>
+</div>
+
+
+
+
+
 <script type="text/javascript">
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (function () {
     window.addEventListener('load', function () {
@@ -384,7 +686,28 @@ width="1000" height="600"
 
 
 
+function doOnOrientationChange()
+  {
+    switch(window.orientation) 
+    {  
+      case -90:
+      case 90:
+      $("img").show();
+        $("#loading").show();
+        break; 
+      default:
+       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ $("img").hide();
+   $("#rotate").show();     $("#loadingwithoutrotate").hide(); $("#rotate").css('visibility','visible');
+}
+        break; 
+    }
+  }
 
+  window.addEventListener('orientationchange', doOnOrientationChange);
+
+  // Initial execution if needed
+  doOnOrientationChange();
 
 
 
@@ -425,8 +748,10 @@ width="1000" height="600"
 
 
 
-
-
+/* 
+if(window.innerHeight > window.innerWidth){
+    alert("Please use Landscape for a better experience of the gallery !");
+} */
 
 
 
@@ -1209,14 +1534,6 @@ button.onclick = openCloseMenu;
 
 
 
-/* Scrolling */
-
-var Scrolling = function(intSelect){
-  var strID = intSelect.toString();
-  var elmnt = document.getElementsByClassName("creditsnav");
-   elmnt.scrollTop = SelectMovie*intSelect;
-  
-}
 
 
 
@@ -1231,7 +1548,14 @@ var Scrolling = function(intSelect){
 
 
 
-// Automated Text
+
+
+
+
+
+
+
+
 var $lines = $('.prompt p');
 $lines.hide();
 var lineContents = new Array();
@@ -1302,10 +1626,195 @@ terminal();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+$('.close').click(function(){
+    $('.texteditorapp').fadeOut();
+    $('button.texticon').fadeIn();
+});
+
+$('.minimize').click(function(){
+    $('.texteditorapp').fadeOut();
+    $('button.texticon').fadeIn();
+});
+
+$('.zoom').click(function(){
+  $('.texteditorapp').toggleClass('larger', 660);
+});
+
+// WAS .dblclick
+$('button.texticon').click(function(){
+   $('.texteditorapp').fadeIn();
+});
+
+$('.content').each(function(){
+    this.contentEditable = false;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // SAVE IMAGE AS
 $("body").on("contextmenu", "img", function(e) {
   return false;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//COMMENTS IMESSAGE BUTTON
+var button1 = document.querySelector('.popupcomments'),
+    items1 = document.querySelectorAll('.triggercomments');
+var openCloseMenu1 = function() {
+  for(i=0; i < items.length; i++){
+    items1[i].classList.toggle('slideout');
+ 
+  }
+    $("#name").val("@"); $("#name").focus();  $('#name').val($('#name').val());
+}
+button1.onclick = openCloseMenu1;
+
+
+$("#name").click(function(){
+  $("#name").val("@");
+  $("#name").focus();
+  $('#name').val($('#name').val());
+ });
+
+$("#message").click(function(){
+  $("#message").focus();
+ });
+
+
+
+
+
+
+
+
+
+//ACTUAL iMESSAGE
+$(function() {
+  var ref = new Firebase("https://gallery-commenting-system.firebaseio.com/");
+
+ var deliver = function() {
+   $(".delivered").remove();
+    $('.delivered').addClass('old');
+    $('.message-screen').append('<div class="delivered"><span>Delivered</span></div>');
+   
+    $('.message-screen').animate({
+      scrollTop: $(".message-screen")[0].scrollHeight
+    }, 700)
+  };
+  
+  
+  function scrollDown() {
+  var focusBottom = document.getElementById("adobewordpress");
+  focusBottom.scrollTop = focusBottom.scrollHeight;
+}
+  
+  function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+  
+    ref.on("child_added", function(snapshot) {
+      var newPost = snapshot.val();
+      $("#adobewordpress").append('<div class="singlemessage"> <div class="sender-text"><p>' +newPost.message +'<date><b class="handlename">' + newPost.name +'</b>'+" " + newPost.postedAt + '</date></div></div>');
+       scrollDown();
+    });
+
+    $("#comment").submit(function() {
+      if($("#name").val()&&$("#message").val()){
+        
+      var d = new Date();
+    var clock = formatAMPM(d);
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var currentDate =
+      (('' + month).length < 2 ? '0' : '') + month + '/' +
+      (('' + day).length < 2 ? '0' : '') + day + '/' +
+
+      d.getFullYear() + '&nbsp;&nbsp;' + clock;
+   
+ /* var currentDate = new Date().toLocaleString('en-US',options); 
+  */  
+        
+        
+      ref.push().set({
+        name: $("#name").val(),
+        message: $("#message").val(),
+        postedAt: currentDate
+      });
+        
+        deliver();
+        
+         setTimeout(function() {
+      $('form.chat > span').addClass('spinner');
+    }, 100);
+
+    setTimeout(function() {
+      $('form.chat > span').removeClass('spinner');
+    }, 2000);
+      }
+      $("#message").val("");
+      return false;
+    });
+});
+
+function slugify(text) {
+  return text.toString().toLowerCase().trim()
+    .replace(/&/g, '-and-')
+    .replace(/[\s\W-]+/g, '-')
+    .replace(/[^a-zA-Z0-9-_]+/g,'');
+}
 
 </script>
 
