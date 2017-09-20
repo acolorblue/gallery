@@ -7,7 +7,7 @@ var animate3d = animate3d || {
             left: 0,
             top: 0,
             init: function (class, callback, initRes) {
-                this.elem = document.getElementsByClassName(class);
+                this.elem = document.getElementsByClassName(class)[0];
                 this.callback = callback || null;
                 window.addEventListener('resize', function () {
                     animate3d.screen.resize();
